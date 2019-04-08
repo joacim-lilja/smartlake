@@ -1,3 +1,5 @@
+
+//create map and set marker(s)
 function initMap() {
 
     var myLatLng = { lat: 57.868828, lng: 14.133597 };
