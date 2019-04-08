@@ -1,5 +1,5 @@
 const express = require('express')
-
+const functions = require('../functions')
 
 module.exports = function (container) {
   const router = express.Router()

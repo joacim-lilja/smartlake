@@ -6,28 +6,38 @@ const path = require('path')
 const awilix = require('awilix')
 const bcrypt = require('bcryptjs')
 
+
 //Routers
 const mainRouter = require('./routers/main-router')
 
 //Repositories
 const databaseRepository = require('../data-access-layer/database-repository')
+const functionsRepository = require('../data-access-layer/functions-repository')
 
 //Managers
 const databaseManager = require('../business-logic-layer/database-manager')
-const functions = require('../presentation-layer/functions')
+const functionsManager = require('../business-logic-layer/functions-manager')
 //Setting container
+
+
 const container = awilix.createContainer()
+
+container.register('mainRouter', awilix.asFunction(mainRouter))
 container.register('databaseManager', awilix.asFunction(databaseManager))
 container.register('databaseRepository', awilix.asFunction(databaseRepository))
-container.register('mainRouter', awilix.asFunction(mainRouter))
-container.register('functions', awilix.asFunction(functions))
+container.register('functionsManager', awilix.asFunction(functionsManager))
+container.register('functionsRepository', awilix.asFunction(functionsRepository))
+
+
 const theMainRouter = container.resolve('mainRouter')
+
 
 app.use(express.static(path.join(__dirname, '/')))
 app.use(express.static(path.join(__dirname, '/public')))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(express.static(__dirname + '/'))
 app.use('/', theMainRouter)
+
 
 app.engine('hbs', expressHandlebars({
   defaultLayout: 'main',
