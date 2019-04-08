@@ -38,5 +38,5 @@ app.engine('hbs', expressHandlebars({
 app.set('views', path.join(__dirname, 'views'))
 
 app.listen(8080, function () {
-  console.log('Running on 8080!')
+  console.log('Running on 3000!')
 })
