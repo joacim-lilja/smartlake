@@ -3,9 +3,9 @@ const database = require('./db')
 module.exports = function (container) {
    return {
       // water functions
-      getWaterData: function (waterUUID, callback) {
-         const values = [waterUUID]
-         const query = "SELECT * FROM waters WHERE waterUUID = ?"
+      getWaterData: function (callback) {
+         const values = []
+         const query = "SELECT * FROM waters"
          database.query(query, values, function (error) {
             callback(error)
          })

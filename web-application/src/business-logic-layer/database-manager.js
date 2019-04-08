@@ -1,8 +1,8 @@
 module.exports = function (container) {
    return {
       // water functions
-      getWaterData: function (waterUUID, callback) {
-         container.databaseRepository.getWaterData(waterUUID, callback)
+      getWaterData: function (callback) {
+         container.databaseRepository.getWaterData(callback)
       },
 
       postWaterData: function (waterUUID, nameSwedish, lengthKM, areaKM, coordLat, coordLng, body, callback) {

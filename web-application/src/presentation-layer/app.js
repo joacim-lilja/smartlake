@@ -14,13 +14,13 @@ const databaseRepository = require('../data-access-layer/database-repository')
 
 //Managers
 const databaseManager = require('../business-logic-layer/database-manager')
-
+const functions = require('../presentation-layer/functions')
 //Setting container
 const container = awilix.createContainer()
 container.register('databaseManager', awilix.asFunction(databaseManager))
 container.register('databaseRepository', awilix.asFunction(databaseRepository))
 container.register('mainRouter', awilix.asFunction(mainRouter))
-
+container.register('functions', awilix.asFunction(functions))
 const theMainRouter = container.resolve('mainRouter')
 
 app.use(express.static(path.join(__dirname, '/')))

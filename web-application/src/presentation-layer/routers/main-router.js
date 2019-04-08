@@ -5,9 +5,16 @@ module.exports = function (container) {
   const router = express.Router()
 
   router.get("/", function (req, res) {
-    const model = {
-    }
-    res.render('graph.hbs')
+    container.databaseManager.getWaterData(function (error, water) {
+      if (error) {
+        res.render("error.hbs")
+      } else {
+        const model = {
+          water: water
+        }
+        res.render('graph.hbs', model)
+      }
+    })   
   })
 
   router.get('/insert', function (req, res) {
