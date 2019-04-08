@@ -5,6 +5,8 @@ module.exports = function (container) {
   const router = express.Router()
 
   router.get("/", function (req, res) {
+    const model = {
+    }
     res.render('graph.hbs')
   })
 
