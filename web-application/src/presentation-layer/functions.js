@@ -1,36 +1,89 @@
-
+var map;
 //create map and set marker(s)
 function initMap() {
 
     var myLatLng = { lat: 57.868828, lng: 14.133597 };
 
-    var map = new google.maps.Map(document.getElementById('map'), {
+    map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: 57.7811, lng: 14.1586 },
         zoom: 11,
         streetViewControl: false,
         fullscreenControl: false
     });
-    var marker = new google.maps.Marker({
-        position: myLatLng,
-        map: map,
-        title: 'lillån'
-    });
-
-    marker.addListener('click', function () {
-        initGraph()
-        getInfo()
-    })
+   initMarkers();
 }
+
+//put all markers on the map and add onclick events.
+function initMarkers(){
+    var myLatLng = { lat: 0, lng: 0};
+
+    var testMarker = { 
+        waterUUID: 0, 
+        nameSwedish: 'Lillån',
+        lengthKM: 14, 
+        areaKM: 250, 
+        coordLat: 57.868828, 
+        coordLng: 14.133597, 
+        body: 'it works!'
+    }
+
+    var testMarker2 = { 
+        waterUUID: 0, 
+        nameSwedish: 'Lillån',
+        lengthKM: 14, 
+        areaKM: 250, 
+        coordLat: 57.878828, 
+        coordLng: 14.143597, 
+        body: 'it works!'
+    }
+
+    var markerArray = [];
+    markerArray.push(testMarker)
+    markerArray.push(testMarker2)
+
+    for(var i in markerArray){
+        console.log(markerArray[i].coordLat)
+        myLatLng.lat = markerArray[i].coordLat
+        myLatLng.lng = markerArray[i].coordLng
+
+        var newMarker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            title: markerArray[i].nameSwedish
+        });
+
+        newMarker.addListener('click', function () {
+            initGraph() //create graph for clicked marker
+            getInfo() //get info for clicked marker
+        })
+    }
+}
+
 //get info 
-function getInfo() {
+function getInfo(name) {
+    //todo
+
+    //hardcoded
     document.getElementById("title").innerHTML = "Lillån"
     document.getElementById("info").innerHTML = "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source."
 }
 
+//get date
+function getDate(){
+    //todo
+}
+
+//get data for selected place and date
+function getData(){
+    //todo
+}
 
 //create chart.js graph with hardcoded values
 function initGraph() {
 
+    //todo
+    //getData()
+    //hardcoded
     //x
     var time = ['10:00', '12:00', '14:00', '16:00', '18:00', '20:00', '22:00'];
     //y
