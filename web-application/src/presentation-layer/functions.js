@@ -17,6 +17,7 @@ function initMap() {
 function initMarkers(){
     var myLatLng = { lat: 0, lng: 0};
 
+    /*
     var testMarker = { 
         waterUUID: 0, 
         nameSwedish: 'Lillån',
@@ -36,11 +37,14 @@ function initMarkers(){
         coordLng: 14.143597, 
         body: 'it works!'
     }
+    
 
     var markerArray = [];
     markerArray.push(testMarker)
     markerArray.push(testMarker2)
+    */
 
+    
     for(var i in markerArray){
         console.log(markerArray[i].coordLat)
         myLatLng.lat = markerArray[i].coordLat
