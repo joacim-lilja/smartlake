@@ -1,0 +1,150 @@
+html,
+body {
+    margin: 0px;
+    padding: 0px;
+    z-index: -10;
+}
+
+#slimWrapper {
+    width: 100%;
+    margin: auto;
+    margin-top: 100px;
+    padding: 0px 60px;
+    box-sizing: border-box;
+}
+
+header {
+    width: 100%;
+    height: 100px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 50px 1px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    z-index: 10;
+}
+
+header nav {
+    height: 100%;
+}
+header nav ul {
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    margin: 0px;
+}
+header nav li {
+    list-style: none;
+    float: left;
+}
+header nav li a, #logo {
+    display: block;
+    font-family: Montserrat, sans-serif;
+    text-decoration: none;
+    font-size: 20px;
+    color: #6681e0;
+    padding: 20px;
+    transition: color 0.2s;
+}
+#logo {
+    font-family: Exo, sans-serif;
+    font-size: 40px;
+    color: #6681e0;
+    padding: 30px;
+}
+header nav #logo {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+header nav li a:hover {
+    color: #b1bbdf;
+}
+header nav ul.left {
+    left: 200px;
+}
+header nav ul.right {
+    right: 50px;
+}
+header nav ul.right a {
+    color: #b1bbdf;
+}
+
+#map {
+    top: 100px;
+    height: 20vw;
+    min-height: 400px;
+    max-height: 800px;
+}
+
+#mainSection {
+    top: 100px;
+    width: 100%;
+    padding-top: 50px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 50px 1px rgba(255, 255, 255, 1);
+    position: relative;
+    z-index: 10;
+}
+
+#chart {
+    display: block;
+    width: 100%;
+    margin-top: 75px;
+    margin-bottom: 50px;
+}
+
+h1 {
+    font-family: "Noto Sans", sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color: #707070;
+    margin-top: 75px;
+}
+
+p {
+    font-family: Montserrat, sans-serif;
+    font-size: 20px;
+    color: #707070;
+    line-height: 32px;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+footer {
+    height: 400px;
+    background-color: #b1bbdf;
+    margin-top: 200px;
+}
+footer nav {
+    display: table;
+    margin: auto;
+    padding-top: 100px;
+    /*width: 200px;*/
+}
+footer nav #logo {
+    text-align: center;
+    color: #ffffff;
+}
+footer nav ul {
+    overflow: hidden;
+}
+footer nav li {
+    list-style: none;
+    float: left;
+}
+footer nav li a {
+    display: block;
+    font-family: Montserrat, sans-serif;
+    text-decoration: none;
+    font-size: 20px;
+    color: #ffffff;
+    padding: 20px;
+    transition: color 0.2s;
+}
+
+@media screen and (min-width: 720px) {
+    #slimWrapper {
+        width: 720px;
+    }
+}

@@ -1,0 +1,20 @@
+<form action="/insert" method="POST">
+<input type="number" name="waterUUID" id="waterUUID" placeholder="waterUUID">
+<input type="text" name="nameSwedish" id="nameSwedish" placeholder="Swedish Name">
+<input type="text" name="coordLng" id="coordLng" placeholder="Longitudal Coordinates">
+<input type="text" name="coordLat" id="coordLat" placeholder="Latitudal Coordinates">
+<input type="text" name="length" id="length" placeholder="length">
+<input type="text" name="are" id="areaKM" placeholder="areaKM">
+<br>
+<textarea name="body" id="body" cols="30" rows="10"></textarea>
+
+<button type="submit" name="insert">
+   Submit to database
+</button>
+</form>
+
+<p id="time"></p>
+
+<script>
+   var newPara = document.getElementById('time').innerHTML = (Date.now() / 1000 | 0)
+</script>
