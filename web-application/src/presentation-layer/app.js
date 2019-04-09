@@ -17,14 +17,16 @@ const functionsRepository = require('../data-access-layer/functions-repository')
 //Managers
 const databaseManager = require('../business-logic-layer/database-manager')
 const functionsManager = require('../business-logic-layer/functions-manager')
+
+
 //Setting container
-
-
 const container = awilix.createContainer()
 
 container.register('mainRouter', awilix.asFunction(mainRouter))
+
 container.register('databaseManager', awilix.asFunction(databaseManager))
 container.register('databaseRepository', awilix.asFunction(databaseRepository))
+
 container.register('functionsManager', awilix.asFunction(functionsManager))
 container.register('functionsRepository', awilix.asFunction(functionsRepository))
 

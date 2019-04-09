@@ -10,7 +10,7 @@ module.exports = function (container) {
         res.render("error.hbs")
       } else {
         const model = {
-          water: water
+          
         }
         res.render('graph.hbs', model)
       }

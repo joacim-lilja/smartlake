@@ -79,13 +79,13 @@ module.exports = function (container) {
     markerArray.push(testMarker2)
     */
 
-      var markerArray = [];
+      var markerArray = []
       markerArray.push(testMarker)
       markerArray.push(testMarker2)
       
 
 
-      for (var i in markerArray) {
+      for (i in markerArray) {
          console.log(markerArray[i].coordLat)
          myLatLng.lat = markerArray[i].coordLat
          myLatLng.lng = markerArray[i].coordLng
